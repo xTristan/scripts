@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## TODO: need to fix the issue with \e in Mac OS bash
 for i in `seq 1 4`;
 do
   echo -en "\e[40m      "  # Black
