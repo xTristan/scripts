@@ -28,4 +28,11 @@ dropbox start -i
 // copy .emacs
 // copy bash.rc, bash.profile
 // copy terminial profiles
+// install i3
+// install polybar
+// install compton
 
+// install betterlockscreen
+git clone https://github.com/pavanjadhaw/betterlockscreen
+cd betterlockscreen
+cp betterlockscreen ~/.local/bin/
