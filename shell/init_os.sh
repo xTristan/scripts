@@ -2,6 +2,7 @@ sudo apt-get update && sudo apt-get install -f
 
 ## Utilities
 sudo apt-get install tmux
+sudo apt-get install tilix
 sudo apt-get install emacs24
 sudo apt-get install google-chrome-stable
 sudo apt install pv
