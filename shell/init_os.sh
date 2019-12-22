@@ -1,8 +1,16 @@
 sudo apt-get update && sudo apt-get install -f
 
-## Utilities
+# Temporary backup folders
+mkdir ~/backups
+
+# Utilities
 sudo apt-get install tmux
+
+## Terminal - Tilix
 sudo apt-get install tilix
+## load tilix conifguration
+dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
+
 sudo apt-get install emacs25
 sudo apt-get install google-chrome-stable
 sudo apt install pv
@@ -15,22 +23,30 @@ sudo apt-get install curl
 ## Zsh and oh-my-zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+### Install powerlevel9k
+# sudo apt-get install zsh-theme-powerlevel9k
+# echo 'source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+### Install Nerd Fonts
+git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/
+cd ~/backups/nerd-fonts
 
 
 # copy dotfiles
-## make backups
-mkdir ~/backups
+## make backups of vanila files
 mv ~/.bashrc ~/backup/
 mv ~/.bash_aliases ~/backup/
 mv ~/.bash_profiles ~/backup/
+mv ~/.zshrc ~/backup
+mv ~/.tmux.conf ~/backup
+
 ## copy git versions
 git clone https://github.com/xTristan/dotfiles.git
 ln -s /home/xtristan/dotfiles/.bashrc /home/xtristan/.bashrc
 ln -s /home/xtristan/dotfiles/.bash_aliases /home/xtristan/.bash_aliases
 ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
-## load tilix conifguration
-dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
-
+ln -s /home/xtristan/dotfiles/.zshrc /home/xtristan/zsh/.zshrc
+ln -s /home/xtristan/dotfiles/.tmux.conf /home/xtristan/.tmux.conf
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
