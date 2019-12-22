@@ -32,6 +32,10 @@ dropbox start -i
 # copy bash.rc, bash.profile
 # copy terminial profiles
 # install i3
+sudo add-apt-repository ppa:kgilmer/speed-ricer
+sudo apt-get update
+sudo apt install i3-gaps
+
 # install polybar
 # install compton
 
