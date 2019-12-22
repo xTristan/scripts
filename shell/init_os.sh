@@ -20,6 +20,10 @@ sudo apt-get install buildessential
 sudo apt-get install git
 sudo apt-get install curl
 
+# Download my own dotfiles and scripts
+git clone https://github.com/xTristan/dotfiles.git
+git clone https://github.com/xTristan/scripts.git
+
 ## Zsh and oh-my-zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -41,7 +45,6 @@ mv ~/.zshrc ~/backup
 mv ~/.tmux.conf ~/backup
 
 ## copy git versions
-git clone https://github.com/xTristan/dotfiles.git
 ln -s /home/xtristan/dotfiles/.bashrc /home/xtristan/.bashrc
 ln -s /home/xtristan/dotfiles/.bash_aliases /home/xtristan/.bash_aliases
 ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
@@ -56,12 +59,18 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 # copy bash.rc, bash.profile
 # copy terminial profiles
 # install i3
-sudo add-apt-repository ppa:kgilmer/speed-ricer
-sudo apt-get update
+# sudo add-apt-repository ppa:kgilmer/speed-ricer
+# sudo apt-get update
 sudo apt install i3-gaps
 
 # install polybar
+sudo apt install polybar
+sudo gunzip /usr/share/doc/polybar/config.gz
+mkdir /home/xtristan/.config/polybar
+cp /usr/share/doc/polybar/config /home/xtristan/.config/polybar/config
+
 # install compton
+sudo apt install compton
 
 # install betterlockscreen
 sudo apt-get install bc imagemagick libjpeg-dev libpam0g-dev libxcb-composite0 libxcb-composite0-dev \
