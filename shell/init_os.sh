@@ -50,6 +50,7 @@ ln -s /home/xtristan/dotfiles/.bash_aliases /home/xtristan/.bash_aliases
 ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
 ln -s /home/xtristan/dotfiles/.zshrc /home/xtristan/zsh/.zshrc
 ln -s /home/xtristan/dotfiles/.tmux.conf /home/xtristan/.tmux.conf
+ln -s /home/xtristan/dotfiles/git/.gitconfig /home/xtristan/.gitconfig
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
