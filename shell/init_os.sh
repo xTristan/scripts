@@ -3,7 +3,7 @@ sudo apt-get update && sudo apt-get install -f
 ## Utilities
 sudo apt-get install tmux
 sudo apt-get install tilix
-sudo apt-get install emacs24
+sudo apt-get install emacs25
 sudo apt-get install google-chrome-stable
 sudo apt install pv
 sudo apt install unity-tweak-tool
@@ -12,20 +12,28 @@ sudo apt-get install buildessential
 sudo apt-get install git
 sudo apt-get install curl
 
+## Zsh and oh-my-zsh
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+# copy dotfiles
+## make backups
+mkdir ~/backups
+mv ~/.bashrc ~/backup/
+mv ~/.bash_aliases ~/backup/
+mv ~/.bash_profiles ~/backup/
+## copy git versions
+git clone https://github.com/xTristan/dotfiles.git
+ln -s /home/xtristan/dotfiles/.bashrc /home/xtristan/.bashrc
+ln -s /home/xtristan/dotfiles/.bash_aliases /home/xtristan/.bash_aliases
+ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
+## load tilix conifguration
+dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
+
+
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-
-## Install web development tools
-sudo apt-get install apache2
-## sudo apt install libapache2-mod-*
-sudo apt-get install mysql-server
-## Restart MySql Server
-## sudo systemctl restart mysql.service
-
-sudo apt install mysqltuner
-
-sudo apt-get install nautilus-dropbox
-dropbox start -i
 
 # copy .tmux.conf
 # copy .emacs
@@ -67,3 +75,18 @@ cp betterlockscreen ~/.local/
 # Add this line to ~/.config/i3/config
 # set desktop background with custom effect
 # exec --no-startup-id betterlockscreen -w dim
+
+
+
+
+## Install web development tools
+# sudo apt-get install apache2
+## sudo apt install libapache2-mod-*
+# sudo apt-get install mysql-server
+## Restart MySql Server
+## sudo systemctl restart mysql.service
+
+# sudo apt install mysqltuner
+
+# sudo apt-get install nautilus-dropbox
+# dropbox start -i
