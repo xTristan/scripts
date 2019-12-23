@@ -51,6 +51,8 @@ ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
 ln -s /home/xtristan/dotfiles/.zshrc /home/xtristan/zsh/.zshrc
 ln -s /home/xtristan/dotfiles/.tmux.conf /home/xtristan/.tmux.conf
 ln -s /home/xtristan/dotfiles/git/.gitconfig /home/xtristan/.gitconfig
+ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
+ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
