@@ -42,11 +42,11 @@ mv ~/.tmux.conf ~/backup
 
 ## copy git versions
 git clone https://github.com/xTristan/dotfiles.git
-ln -s /home/xtristan/dotfiles/.bashrc /home/xtristan/.bashrc
-ln -s /home/xtristan/dotfiles/.bash_aliases /home/xtristan/.bash_aliases
-ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
-ln -s /home/xtristan/dotfiles/.zshrc /home/xtristan/zsh/.zshrc
-ln -s /home/xtristan/dotfiles/.tmux.conf /home/xtristan/.tmux.conf
+ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
+ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $HOME/dotfiles/.zshrc $HOME/zsh/.zshrc
+ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
