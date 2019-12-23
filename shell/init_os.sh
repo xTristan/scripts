@@ -74,36 +74,42 @@ cp /usr/share/doc/polybar/config /home/xtristan/.config/polybar/config
 sudo apt install compton
 
 # install betterlockscreen
-sudo apt-get install bc imagemagick libjpeg-dev libpam0g-dev libxcb-composite0 libxcb-composite0-dev \
+sudo apt-get install checkinstall bc imagemagick libjpeg-dev libpam0g-dev libxcb-composite0 libxcb-composite0-dev \
     libxcb-image0-dev libxcb-randr0 libxcb-util-dev libxcb-xinerama0 libxcb-xinerama0-dev libxcb-xkb-dev \
-    libxkbcommon-x11-dev feh libev-dev;
+    libxkbcommon-x11-dev feh libev-dev autoconf libxcb-xrm-dev;
 printf "\n";
 
 # Install i3lock-color dependency
-git clone https://github.com/PandorasFox/i3lock-color && cd i3lock-color;
+git clone https://github.com/PandorasFox/i3lock-color backup/i3lock-color && cd backup/i3lock-color;
 autoreconf -i; ./configure;
 make; sudo checkinstall --pkgname=i3lock-color --pkgversion=1 -y;
-cp examples/betterlockscreenrc ~/dotfiles/i3/
-ln -s ~/dotfiles/i3/betterlockscreenrc ~/.config/
+
+# back to root
+cd ~/
 
 # Delete the repro
 # cd .. && sudo rm -r i3lock-color;
 
 # Install betterlockscreen
-git clone https://github.com/pavanjadhaw/betterlockscreen
-cd betterlockscreen
-cp betterlockscreen ~/.local/
-./betterlockscreen -u ~/Pictures
+git clone https://github.com/pavanjadhaw/betterlockscreen backup/betterlockscreen
+cp backup/betterlockscreen/betterlockscreen ~/.local/bin/
+## Only necessary if first time setup 
+## cp examples/betterlockscreenrc ~/dotfiles/i3/
+ln -s ~/dotfiles/i3/betterlockscreenrc ~/.config/
 
-# Add this line to your ~/.config/i3/config
+# Set up background wallpaper
+## Link to Dropbox picture folder. Location is different each time
+## export WALLPAPER_ROOT=/media/xtristan/OS/Users/Jian/Dropbox/Photos/Wallpaper
+ln -s $WALLPAPER_ROOT Pictures/Wallpapers
+betterlockscreen -u ~/Pictures/Wallpapers
+
+# Example configurations for betterlockscreen in ~/.config/i3/config
 # bindsym $mod+shift+x exec betterlockscreen -l dim
+# bindsym $mod+Shift+x exec ~/.local/bin/betterlockscreen -l blur -t "TxT"
 
 # Add this line to ~/.config/i3/config
 # set desktop background with custom effect
 # exec --no-startup-id betterlockscreen -w dim
-
-
-
 
 ## Install web development tools
 # sudo apt-get install apache2
