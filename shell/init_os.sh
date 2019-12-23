@@ -45,12 +45,12 @@ mv ~/.zshrc ~/backup
 mv ~/.tmux.conf ~/backup
 
 ## copy git versions
-ln -s /home/xtristan/dotfiles/.bashrc /home/xtristan/.bashrc
-ln -s /home/xtristan/dotfiles/.bash_aliases /home/xtristan/.bash_aliases
-ln -s /home/xtristan/dotfiles/.bash_profile /home/xtristan/.bash_profile
-ln -s /home/xtristan/dotfiles/.zshrc /home/xtristan/zsh/.zshrc
-ln -s /home/xtristan/dotfiles/.tmux.conf /home/xtristan/.tmux.conf
-ln -s /home/xtristan/dotfiles/git/.gitconfig /home/xtristan/.gitconfig
+ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
+ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $HOME/dotfiles/.zshrc $HOME/zsh/.zshrc
+ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
 ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 
@@ -69,8 +69,8 @@ sudo apt install i3-gaps
 # install polybar
 sudo apt install polybar
 sudo gunzip /usr/share/doc/polybar/config.gz
-mkdir /home/xtristan/.config/polybar
-cp /usr/share/doc/polybar/config /home/xtristan/.config/polybar/config
+mkdir $HOME/.config/polybar
+cp /usr/share/doc/polybar/config $HOME/.config/polybar/config
 
 # install compton
 sudo apt install compton
