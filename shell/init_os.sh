@@ -85,8 +85,16 @@ make; sudo checkinstall --pkgname=i3lock-color --pkgversion=1 -y;
 # back to root
 cd ~/
 
+# Install rofi, feh
+sudo apt-get install rofi, feh
+
 # Delete the repro
 # cd .. && sudo rm -r i3lock-color;
+
+# Set up background wallpaper is different each time
+# e.g export WALLPAPER_ROOT=/media/xtristan/OS/Users/Jian/Dropbox/Photos/Wallpaper
+ln -s $WALLPAPER_ROOT Pictures/Wallpapers
+betterlockscreen -u ~/Pictures/Wallpapers
 
 # Install betterlockscreen
 # sudo apt-get install checkinstall bc imagemagick libjpeg-dev libpam0g-dev libxcb-composite0 libxcb-composite0-dev \
@@ -94,35 +102,12 @@ cd ~/
 #    libxkbcommon-x11-dev feh libev-dev autoconf libxcb-xrm-dev;
 git clone https://github.com/pavanjadhaw/betterlockscreen backup/betterlockscreen
 cp backup/betterlockscreen/betterlockscreen ~/.local/bin/
-## Only necessary if first time setup 
-## cp examples/betterlockscreenrc ~/dotfiles/i3/
+# Only necessary if first time setup 
+# cp examples/betterlockscreenrc ~/dotfiles/i3/
 ln -s ~/dotfiles/i3/betterlockscreenrc ~/.config/
 
-# Set up background wallpaper
-## Link to Dropbox picture folder. Location is different each time
-## export WALLPAPER_ROOT=/media/xtristan/OS/Users/Jian/Dropbox/Photos/Wallpaper
-ln -s $WALLPAPER_ROOT Pictures/Wallpapers
-betterlockscreen -u ~/Pictures/Wallpapers
-
-# Install rofi, feh
-sudo apt-get install rofi, feh
-
-# Example configurations for betterlockscreen in ~/.config/i3/config
-# bindsym $mod+shift+x exec betterlockscreen -l dim
-# bindsym $mod+Shift+x exec ~/.local/bin/betterlockscreen -l blur -t "TxT"
-
-# Add this line to ~/.config/i3/config
-# set desktop background with custom effect
-# exec --no-startup-id betterlockscreen -w dim
-
-## Install web development tools
-# sudo apt-get install apache2
-## sudo apt install libapache2-mod-*
-# sudo apt-get install mysql-server
-## Restart MySql Server
-## sudo systemctl restart mysql.service
-
-# sudo apt install mysqltuner
-
-# sudo apt-get install nautilus-dropbox
-# dropbox start -i
+# Tweak betterlockscreen script
+# em $HOME/.local/bin/betterlockscreen
+# Adjust indpos for the distance between the ring and the clock (instantaneous)
+# Adjust the rectangle size in the betterlockscreen script. 
+# Requires update the cache with: betterlockscreen -u Pictures/Wallpapers
