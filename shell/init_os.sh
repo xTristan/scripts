@@ -47,6 +47,7 @@ mv ~/.bash_aliases ~/backup/
 mv ~/.bash_profiles ~/backup/
 mv ~/.zshrc ~/backup/
 mv ~/.tmux.conf ~/backup/
+mv ~/.Xresources ~/backup/
 
 ## copy git versions
 ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
@@ -57,6 +58,7 @@ ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
 ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
+ln -s $HOME/dotfiles/.Xresources $HOME/.Xresources
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
