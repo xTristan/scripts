@@ -1,7 +1,7 @@
 sudo apt-get update && sudo apt-get install -f
 
 # Temporary backup folders
-mkdir ~/backups
+mkdir ~/backup
 
 # Utilities
 sudo apt-get install tmux
@@ -44,8 +44,8 @@ fc-cache -fv
 mv ~/.bashrc ~/backup/
 mv ~/.bash_aliases ~/backup/
 mv ~/.bash_profiles ~/backup/
-mv ~/.zshrc ~/backup
-mv ~/.tmux.conf ~/backup
+mv ~/.zshrc ~/backup/
+mv ~/.tmux.conf ~/backup/
 
 ## copy git versions
 ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
