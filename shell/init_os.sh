@@ -32,10 +32,11 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # echo 'source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ### Install Nerd Fonts
-# git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/
+# git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/ # too much. This takes ~5G
 # cd ~/backups/nerd-fonts
-mkdir -p ~/.local/share/fonts
 
+### Selectively install nerd fonts
+mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 fc-cache -fv
 
@@ -60,29 +61,19 @@ ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
-# copy .tmux.conf
-# copy .emacs
-# copy bash.rc, bash.profile
-# copy terminial profiles
-# install i3
+# install i3, does not work on debian, needs manual install.
 # sudo add-apt-repository ppa:kgilmer/speed-ricer
 # sudo apt-get update
 sudo apt install i3-gaps
 
-# install polybar
+# install polybar, does not work on debian, needs manual install.
 sudo apt install polybar
 sudo gunzip /usr/share/doc/polybar/config.gz
 mkdir $HOME/.config/polybar
 cp /usr/share/doc/polybar/config $HOME/.config/polybar/config
 
-# install compton
+# install compton, does not work on debian, needs manual install.
 sudo apt install compton
-
-# install betterlockscreen
-sudo apt-get install checkinstall bc imagemagick libjpeg-dev libpam0g-dev libxcb-composite0 libxcb-composite0-dev \
-    libxcb-image0-dev libxcb-randr0 libxcb-util-dev libxcb-xinerama0 libxcb-xinerama0-dev libxcb-xkb-dev \
-    libxkbcommon-x11-dev feh libev-dev autoconf libxcb-xrm-dev;
-printf "\n";
 
 # Install i3lock-color dependency
 git clone https://github.com/PandorasFox/i3lock-color backup/i3lock-color && cd backup/i3lock-color;
@@ -96,6 +87,9 @@ cd ~/
 # cd .. && sudo rm -r i3lock-color;
 
 # Install betterlockscreen
+# sudo apt-get install checkinstall bc imagemagick libjpeg-dev libpam0g-dev libxcb-composite0 libxcb-composite0-dev \
+#    libxcb-image0-dev libxcb-randr0 libxcb-util-dev libxcb-xinerama0 libxcb-xinerama0-dev libxcb-xkb-dev \
+#    libxkbcommon-x11-dev feh libev-dev autoconf libxcb-xrm-dev;
 git clone https://github.com/pavanjadhaw/betterlockscreen backup/betterlockscreen
 cp backup/betterlockscreen/betterlockscreen ~/.local/bin/
 ## Only necessary if first time setup 
@@ -107,6 +101,9 @@ ln -s ~/dotfiles/i3/betterlockscreenrc ~/.config/
 ## export WALLPAPER_ROOT=/media/xtristan/OS/Users/Jian/Dropbox/Photos/Wallpaper
 ln -s $WALLPAPER_ROOT Pictures/Wallpapers
 betterlockscreen -u ~/Pictures/Wallpapers
+
+# Install rofi, feh
+sudo apt-get install rofi, feh
 
 # Example configurations for betterlockscreen in ~/.config/i3/config
 # bindsym $mod+shift+x exec betterlockscreen -l dim
