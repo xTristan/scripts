@@ -51,7 +51,7 @@ mv ~/.tmux.conf ~/backup
 ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
-ln -s $HOME/dotfiles/.zshrc $HOME/zsh/.zshrc
+ln -s $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
