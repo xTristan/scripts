@@ -9,6 +9,6 @@ if (xrandr | grep "$EXTERNAL connected"); then
     xrandr --output $INTERNAL --mode 2560x1440
     xrandr --output $EXTERNAL --primary --scale 1x1 --mode 3440x1440 --$DIRECTION $INTERNAL
 else
-    xrandr --output $INTERNAL --mode 2560x1440
+    xrandr --output $INTERNAL --primary --mode 2560x1440
     xrandr --output $EXTERNAL --off 
 fi
