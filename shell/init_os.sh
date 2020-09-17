@@ -125,6 +125,7 @@ betterlockscreen -u ~/Pictures/Wallpapers
 #    libxcb-image0-dev libxcb-randr0 libxcb-util-dev libxcb-xinerama0 libxcb-xinerama0-dev libxcb-xkb-dev \
 #    libxkbcommon-x11-dev feh libev-dev autoconf libxcb-xrm-dev;
 git clone https://github.com/pavanjadhaw/betterlockscreen backup/betterlockscreen
+mkdir ~/.local/bin/
 cp backup/betterlockscreen/betterlockscreen ~/.local/bin/
 # Only necessary if first time setup 
 # cp examples/betterlockscreenrc ~/dotfiles/i3/
