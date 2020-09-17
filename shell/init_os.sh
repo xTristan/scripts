@@ -6,10 +6,6 @@ mkdir ~/backup
 # Utilities
 sudo apt-get install tmux
 
-## Terminal - Tilix
-sudo apt-get install tilix
-## load tilix conifguration
-dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
 
 sudo apt-get install emacs25
 sudo apt-get install google-chrome-stable
@@ -23,6 +19,11 @@ sudo apt-get install curl
 # Download my own dotfiles and scripts
 git clone https://github.com/xTristan/dotfiles.git
 git clone https://github.com/xTristan/scripts.git
+
+## Terminal - Tilix
+sudo apt-get install tilix
+## load tilix conifguration
+dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
 
 ## Zsh and oh-my-zsh
 sudo apt-get install zsh
@@ -69,7 +70,7 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 # install i3, does not work on debian, needs manual install.
 # sudo add-apt-repository ppa:kgilmer/speed-ricer
 # sudo apt-get update
-sudo apt install i3-gaps
+# sudo apt install i3-gaps
 
 # install polybar, does not work on debian, needs manual install.
 sudo apt install polybar
