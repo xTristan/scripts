@@ -139,4 +139,6 @@ ln -s ~/dotfiles/i3/betterlockscreenrc ~/.config/
 
 # Update trackpad
 sudo mkdir -p /etc/X11/xorg.conf.d
-sudo cp dotfiles/90-touchpad.conf /etc/X11/xorg.conf.d
+sudo cp dotfiles/*.conf /etc/X11/xorg.conf.d
+
+sudo apt-get update; sudo apt-get install xbacklight alsa-utils pulseaudio
