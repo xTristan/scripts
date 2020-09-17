@@ -136,3 +136,7 @@ ln -s ~/dotfiles/i3/betterlockscreenrc ~/.config/
 # Adjust indpos for the distance between the ring and the clock (instantaneous)
 # Adjust the rectangle size in the betterlockscreen script. 
 # Requires update the cache with: betterlockscreen -u Pictures/Wallpapers
+
+# Update trackpad
+sudo mkdir -p /etc/X11/xorg.conf.d
+sudo cp dotfiles/90-touchpad.conf /etc/X11/xorg.conf.d
