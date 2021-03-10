@@ -64,9 +64,6 @@ ln -s $HOME/dotfiles/.Xresources $HOME/.Xresources
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
-## Install i3-wm
-sudo apt install i3-wm
-sudo apt install libev-dev libstartup-notification0-dev dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev
 
 
 
@@ -76,13 +73,28 @@ sudo apt install libev-dev libstartup-notification0-dev dh-autoreconf libxcb-key
 # sudo apt install i3-gaps
 
 # Manual install: https://github.com/Airblader/i3/wiki/Building-from-source
-# Install dependencies:
-# sudo apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev
+# https://lottalinuxlinks.com/how-to-build-and-install-i3-gaps-on-debian/
+sudo apt purge i3
+## Install dependencies:
+sudo apt install meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev
+## sudo apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev
 # clone the repository
-# git clone https://www.github.com/Airblader/i3 i3-gaps
-# cd i3-gaps
+git clone https://www.github.com/Airblader/i3 i3-gaps
+cd i3-gaps
 
 # compile & install
+rm -rf build/
+mkdir -p build && cd build/
+meson ..
+ninja
+sudo ninja install
+# verify installation with which i3
+which i3
+mkdir ~/.config/i3/
+ln -s ~/dotfiles/i3/config ~/.config/i3/config
+
+
+########  BEGIN OF Stale. Ignore ####### 
 # autoreconf --force --install
 # rm -rf build/
 # mkdir -p build && cd build/
@@ -92,29 +104,32 @@ sudo apt install libev-dev libstartup-notification0-dev dh-autoreconf libxcb-key
 # ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 # make
 # sudo make install
+########  END OF Stale. Ignore ####### 
 
 # install polybar, does not work on debian, needs manual install.
 sudo apt install polybar
-sudo gunzip /usr/share/doc/polybar/config.gz
-mkdir $HOME/.config/polybar
-cp /usr/share/doc/polybar/config $HOME/.config/polybar/config
+# sudo gunzip /usr/share/doc/polybar/config.gz
+# mkdir $HOME/.config/polybar
+# cp /usr/share/doc/polybar/config $HOME/.config/polybar/config
 
 # install compton, does not work on debian, needs manual install.
 sudo apt install compton
 
 # Install i3lock-color dependency
-git clone https://github.com/PandorasFox/i3lock-color backup/i3lock-color && cd backup/i3lock-color;
-autoreconf -i; ./configure;
-make; sudo checkinstall --pkgname=i3lock-color --pkgversion=1 -y;
-
-# back to root
-cd ~/
-
-# Install rofi, feh
-sudo apt-get install rofi, feh
+sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+git clone https://github.com/PandorasFox/i3lock-color backup/i3lock-color && cd backup/i3lock-color 
+./install-i3lock-color.sh 
+# alternatively: https://github.com/Raymo111/i3lock-color
 
 # Delete the repro
 # cd .. && sudo rm -r i3lock-color;
+
+# back to $HOME
+cd ~/
+
+# Install rofi, feh
+sudo apt-get install rofi feh
+
 
 # Set up background wallpaper is different each time
 # e.g export WALLPAPER_ROOT=/media/xtristan/OS/Users/Jian/Dropbox/Photos/Wallpaper
