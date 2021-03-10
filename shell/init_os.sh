@@ -9,12 +9,7 @@ sudo apt-get install tmux
 
 sudo apt-get install emacs25
 sudo apt-get install google-chrome-stable
-sudo apt install pv
-sudo apt install unity-tweak-tool
-sudo apt-get install checkinstall
-sudo apt-get install buildessential
-sudo apt-get install git
-sudo apt-get install curl
+sudo apt install pv gnome-tweak-tool checkinstall build-essential git curl
 
 # Download my own dotfiles and scripts
 git clone https://github.com/xTristan/dotfiles.git
