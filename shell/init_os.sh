@@ -62,6 +62,8 @@ ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
 ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 ln -s $HOME/dotfiles/.Xresources $HOME/.Xresources
+# See: https://askubuntu.com/questions/715306/xbacklight-no-outputs-have-backlight-property-no-sys-class-backlight-folder
+sudo ln -s $HOME/dotfiles/xorg.conf /etc/X11/xorg.conf
 # optional, depends on machine
 # mkdir $HOME/.confg/gtk-3.0 && ln -s $HOME/dotfiles/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css
 # sudo mkdir /etc/X11/xorg.conf.d/ && sudo ln $HOME/dotfiles/90-touchpad.conf /etc/X11/xorg.conf.d/90-touchpad.conf
