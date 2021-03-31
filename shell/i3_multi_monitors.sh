@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # toggles the external monitor on/off in specified direction
-INTERNAL="eDP1"
-EXTERNAL_DELL="DP1"
-EXTERNAL_OTHER="HDMI-1"
+INTERNAL="eDP-*1"
+EXTERNAL_DELL="DP-*1"
+EXTERNAL_OTHER="HDMI-*1"
 DIRECTION="above"
 
 if (xrandr | grep "^$EXTERNAL_DELL connected"); then
