@@ -160,3 +160,7 @@ sudo mkdir -p /etc/X11/xorg.conf.d
 sudo cp dotfiles/*.conf /etc/X11/xorg.conf.d
 
 sudo apt-get update; sudo apt-get install xbacklight alsa-utils pulseaudio
+# if running into this error: libxcb-util.so.0: cannot open shared object file: No such file or directory
+# sudo ln -s /usr/lib/x86_64-linux-gnu/libxcb-util.so.1 /usr/lib/x86_64-linux-gnu/libxcb-util.so.0
+
+
