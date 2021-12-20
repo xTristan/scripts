@@ -10,6 +10,7 @@ sudo apt-get install checkinstall
 sudo apt-get install buildessential
 sudo apt-get install git
 sudo apt-get install curl
+sudo apt-get install tilix
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
@@ -31,6 +32,7 @@ dropbox start -i
 # copy .emacs
 # copy bash.rc, bash.profile
 # copy terminial profiles
+# dconf load /com/gexperts/Tilix/ < $DROPBOX_FOLDER/dotfiles/tilix.dconf
 # install i3
 # install polybar
 # install compton
