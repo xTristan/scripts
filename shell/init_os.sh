@@ -30,6 +30,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+### follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
+
 ### Install Nerd Fonts
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/ # too much. This takes ~5G
 # cd ~/backups/nerd-fonts
