@@ -28,6 +28,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # sudo apt-get install zsh-theme-powerlevel9k
 # echo 'source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 ### Install Nerd Fonts
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/ # too much. This takes ~5G
 # cd ~/backups/nerd-fonts
