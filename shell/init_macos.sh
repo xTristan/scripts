@@ -1,5 +1,3 @@
-sudo apt-get update && sudo apt-get install -f
-
 # Temporary backup folders
 mkdir ~/backup
 
@@ -29,10 +27,11 @@ brew install --cask unnaturalscrollwheels
 brew install --cask nikitabobko/tap/aerospace
 
 # Download my own dotfiles and scripts
+## Make sure you have your access token ready from https://github.com/settings/personal-access-tokens/
 git clone https://github.com/xTristan/dotfiles.git
 git clone https://github.com/xTristan/scripts.git
 
-# copy dotfiles
+# link dotfiles
 ## make backups of vanila files
 mv ~/.bashrc ~/backup/
 mv ~/.bash_aliases ~/backup/
@@ -41,12 +40,11 @@ mv ~/.zshrc ~/backup/
 mv ~/.emacs ~/backup/
 mkdir $HOME/.emacs.d
 
-## copy git versions
+## symlink dotfiles.
 ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
 ln -s $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
-# ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
 ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
