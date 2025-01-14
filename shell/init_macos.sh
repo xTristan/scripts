@@ -1,0 +1,57 @@
+sudo apt-get update && sudo apt-get install -f
+
+# Temporary backup folders
+mkdir ~/backup
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install p10k
+## follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
+## Or NerdFonts: https://www.nerdfonts.com/font-downloads
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+p10k configure
+
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> $HOME/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Install necessary softwares
+brew install iterm2
+brew install emacs
+brew install --cask google-chrome
+brew install git
+# Allow independent control of scrolling for mouse and trackpad.
+brew install --cask unnaturalscrollwheels
+# Aerospace window management
+brew install --cask nikitabobko/tap/aerospace
+
+# Download my own dotfiles and scripts
+git clone https://github.com/xTristan/dotfiles.git
+git clone https://github.com/xTristan/scripts.git
+
+# copy dotfiles
+## make backups of vanila files
+mv ~/.bashrc ~/backup/
+mv ~/.bash_aliases ~/backup/
+mv ~/.bash_profiles ~/backup/
+mv ~/.zshrc ~/backup/
+mv ~/.emacs ~/backup/
+mkdir $HOME/.emacs.d
+
+## copy git versions
+ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
+ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
+# ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
+ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
+ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
+ln -s $HOME/dotfiles/.aerospace.toml $HOME/.aerospace.toml
+
+## Install Base16 scheme
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
