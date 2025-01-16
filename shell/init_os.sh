@@ -50,12 +50,14 @@ mv ~/.zshrc ~/backup/
 mv ~/.tmux.conf ~/backup/
 mv ~/.Xresources ~/backup/
 mv ~/.emacs ~/backup/
+mkdir ~/backup/zsh_custom/
+mv $ZSH_CUSTOM/aliases.zsh ~/backup/zsh_custom/
 mkdir $HOME/.emacs.d
 
 ## copy git versions
-ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
-ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+# ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+# ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+ln -s $HOME/dotfiles/.aliases $ZSH_CUSTOM/aliases.zsh
 ln -s $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig

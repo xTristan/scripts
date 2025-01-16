@@ -38,12 +38,15 @@ mv ~/.bash_aliases ~/backup/
 mv ~/.bash_profiles ~/backup/
 mv ~/.zshrc ~/backup/
 mv ~/.emacs ~/backup/
+mdkir ~/backup/zsh_custom/
+mv $ZSH_CUSTOM/aliases.zsh ~/backup/zsh_custom/
 mkdir $HOME/.emacs.d
 
 ## symlink dotfiles.
-ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-ln -s $HOME/dotfiles/.bash_aliases $HOME/.bash_aliases
-ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+# ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+# ln -s $HOME/dotfiles/.bash_profile $HOME/.bash_profile
+
+ln -s $HOME/dotfiles/.aliases $ZSH_CUSTOM/aliases.zsh
 ln -s $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
