@@ -21,11 +21,13 @@ brew install --cask unnaturalscrollwheels
 # Aerospace window management
 brew install --cask nikitabobko/tap/aerospace
 
+brew install powerlevel10k
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 # Install p10k
 ## follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
 ## Or NerdFonts: https://www.nerdfonts.com/font-downloads
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ## Open ~/.zshrc, find the line that sets ZSH_THEME, eand change its value to "powerlevel10k/powerlevel10k".
 
 p10k configure
