@@ -44,7 +44,7 @@ mv ~/.bash_aliases ~/backup/
 mv ~/.bash_profiles ~/backup/
 mv ~/.zshrc ~/backup/
 mv ~/.emacs ~/backup/
-mdkir ~/backup/zsh_custom/
+mkdir ~/backup/zsh_custom/
 mv $ZSH_CUSTOM/aliases.zsh ~/backup/zsh_custom/
 mkdir $HOME/.emacs.d
 
