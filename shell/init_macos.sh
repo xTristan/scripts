@@ -4,11 +4,6 @@ mkdir ~/backup
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Install p10k
-## follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
-## Or NerdFonts: https://www.nerdfonts.com/font-downloads
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-p10k configure
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -25,6 +20,15 @@ brew install git
 brew install --cask unnaturalscrollwheels
 # Aerospace window management
 brew install --cask nikitabobko/tap/aerospace
+
+
+# Install p10k
+## follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
+## Or NerdFonts: https://www.nerdfonts.com/font-downloads
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+## Open ~/.zshrc, find the line that sets ZSH_THEME, eand change its value to "powerlevel10k/powerlevel10k".
+
+p10k configure
 
 # Download my own dotfiles and scripts
 ## Make sure you have your access token ready from https://github.com/settings/personal-access-tokens/
