@@ -39,9 +39,9 @@ git clone https://github.com/xTristan/scripts.git
 
 # link dotfiles
 ## make backups of vanila files
-mv ~/.bashrc ~/backup/
-mv ~/.bash_aliases ~/backup/
-mv ~/.bash_profiles ~/backup/
+# mv ~/.bashrc ~/backup/
+# mv ~/.bash_aliases ~/backup/
+# mv ~/.bash_profiles ~/backup/
 mv ~/.zshrc ~/backup/
 mv ~/.emacs ~/backup/
 mkdir ~/backup/zsh_custom/
