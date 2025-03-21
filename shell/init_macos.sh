@@ -11,11 +11,12 @@ echo >> $HOME/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Install necessary softwares
+# Install necessary softwares.
 brew install iterm2
 brew install emacs
 brew install --cask google-chrome
 brew install git
+brew install gh # (GitHub CLi)
 # Allow independent control of scrolling for mouse and trackpad.
 brew install --cask unnaturalscrollwheels
 # Aerospace window management
