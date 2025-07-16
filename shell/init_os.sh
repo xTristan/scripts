@@ -2,6 +2,8 @@ sudo apt-get update && sudo apt-get install -f
 
 # Temporary backup folders
 mkdir ~/backup
+mkdir ~/tmp
+mdkir ~/tmp/fonts/
 
 # Utilities
 sudo apt-get install tmux
@@ -21,16 +23,29 @@ sudo apt-get install tilix
 ## load tilix conifguration
 dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
 
+
 ## Zsh and oh-my-zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P tmp/fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P tmp/fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P tmp/fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P tmp/fonts/
+
+cp tmp/fonts/*.ttf /usr/local/share/fonts
+
+### Install powerlevel10k
+### https://github.com/romkatv/powerlevel10k
+cd tmp/
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
 ### Install powerlevel9k
 # sudo apt-get install zsh-theme-powerlevel9k
 # echo 'source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-### follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
 
 ### Install Nerd Fonts
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/ # too much. This takes ~5G
