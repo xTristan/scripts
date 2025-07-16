@@ -7,7 +7,7 @@ mkdir ~/backup
 sudo apt-get install tmux
 
 
-sudo apt-get install emacs25
+sudo apt-get install emacs
 sudo apt-get install google-chrome-stable
 sudo apt-get install pv gnome-tweak-tool unity-tweak-tool checkinstall build-essential git curl tilix
 
