@@ -63,4 +63,5 @@ ln -s $HOME/dotfiles/.aerospace.toml $HOME/.aerospace.toml
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git # Then select afterglow
+## Consider trying this https://github.com/trapd00r/LS_COLORS for LS_COLORS
 
