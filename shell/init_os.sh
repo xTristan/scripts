@@ -26,6 +26,9 @@ git clone https://github.com/xTristan/scripts.git
 ## Load tilix conifguration
 dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
 
+## Install Emacs package
+emacs --batch --script $HOME/scripts/emacs/install-package.el
+
 ### Install power10k scheme
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P tmp/fonts/
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P tmp/fonts/
@@ -83,6 +86,7 @@ ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 # Make LS_COLORS prettier
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
 ## Make sure the following is in .zshrc
 # Base16 Shell
 # BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -92,7 +96,6 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 
 ## Set a nice them.
 base16_decaf
-
 
 # Consider trying this: https://github.com/trapd00r/LS_COLORS for LS color in terminal
 

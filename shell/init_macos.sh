@@ -42,6 +42,10 @@ gh auth login
 git clone https://github.com/xTristan/dotfiles.git
 git clone https://github.com/xTristan/scripts.git
 
+                                                                     │
+## Install Emacs package                                              │
+emacs --batch --script $HOME/scripts/emacs/install-package.el
+
 # link dotfiles
 ## make backups of vanila files
 # mv ~/.bashrc ~/backup/
