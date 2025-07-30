@@ -7,11 +7,13 @@ mdkir ~/tmp/fonts/
 
 # Utilities
 sudo apt-get install tmux
-
-
 sudo apt-get install emacs
 sudo apt-get install google-chrome-stable
 sudo apt-get install pv gnome-tweak-tool unity-tweak-tool checkinstall build-essential git curl tilix gh
+
+## Zsh and oh-my-zsh
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Git login
 # Generate a token here https://github.com/settings/personal-access-tokens
@@ -23,11 +25,6 @@ git clone https://github.com/xTristan/scripts.git
 
 ## Load tilix conifguration
 dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
-
-
-## Zsh and oh-my-zsh
-sudo apt-get install zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ### Install power10k scheme
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P tmp/fonts/
@@ -83,8 +80,20 @@ ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 # mkdir $HOME/.confg/gtk-3.0 && ln -s $HOME/dotfiles/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css
 # sudo mkdir /etc/X11/xorg.conf.d/ && sudo ln $HOME/dotfiles/90-touchpad.conf /etc/X11/xorg.conf.d/90-touchpad.conf
 
+# Make LS_COLORS prettier
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+## Make sure the following is in .zshrc
+# Base16 Shell
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#        source "$BASE16_SHELL/profile_helper.sh"
+
+## Set a nice them.
+base16_decaf
+
+
 # Consider trying this: https://github.com/trapd00r/LS_COLORS for LS color in terminal
 
 # copy .tmux.conf

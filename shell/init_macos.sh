@@ -64,8 +64,19 @@ ln -s $HOME/dotfiles/emacs/.emacs $HOME/.emacs
 ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 ln -s $HOME/dotfiles/.aerospace.toml $HOME/.aerospace.toml
 
+# Make LS COLOR prettier
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+## Ensure the following is in .zshrc
+# Base16 Shell
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#        source "$BASE16_SHELL/profile_helper.sh"
+       
+### Set a theme
+base_decaf
+
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git # Then select afterglow
 ## Consider trying this https://github.com/trapd00r/LS_COLORS for LS_COLORS
 
