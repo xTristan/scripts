@@ -74,10 +74,7 @@ ln -s $HOME/dotfiles/emacs/common.el $HOME/.emacs.d/common.el
 
 ## Install Base16 scheme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-
-
-
-
+# Consider trying this: https://github.com/trapd00r/LS_COLORS for LS color in terminal
 
 # copy .tmux.conf
 # copy .emacs
