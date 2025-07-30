@@ -33,6 +33,10 @@ echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.
 
 p10k configure
 
+# Configure git login credentails
+# https://github.com/settings/personal-access-tokens
+gh auth login
+
 # Download my own dotfiles and scripts
 ## Make sure you have your access token ready from https://github.com/settings/personal-access-tokens/
 git clone https://github.com/xTristan/dotfiles.git

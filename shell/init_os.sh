@@ -11,24 +11,23 @@ sudo apt-get install emacs
 sudo apt-get install google-chrome-stable
 sudo apt-get install pv gnome-tweak-tool unity-tweak-tool checkinstall build-essential git curl tilix gh
 
+# Git login
+# Generate a token here https://github.com/settings/personal-access-tokens
+gh auth login
 
 # Download my own dotfiles and scripts
 git clone https://github.com/xTristan/dotfiles.git
 git clone https://github.com/xTristan/scripts.git
 
-## Terminal - Tilix
-sudo apt-get install tilix
-## load tilix conifguration
+## Load tilix conifguration
 dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
 
 ## Zsh and oh-my-zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-### Install powerlevel9k
-# sudo apt-get install zsh-theme-powerlevel9k
-# echo 'source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+### Install power10k scheme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+p10k configure
 
 ### follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
 
@@ -116,6 +115,12 @@ ln -s ~/dotfiles/i3/config ~/.config/i3/config
 # autoreconf --force --install
 # rm -rf build/
 # mkdir -p build && cd build/
+
+### Install powerlevel9k
+# sudo apt-get install zsh-theme-powerlevel9k
+# echo 'source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
+# git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
 
 # Disabling sanitizers is important for release versions!
 # The prefix and sysconfdir are, obviously, dependent on the distribution.
