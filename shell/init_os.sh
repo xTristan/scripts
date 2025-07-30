@@ -2,6 +2,8 @@ sudo apt-get update && sudo apt-get install -f
 
 # Temporary backup folders
 mkdir ~/backup
+mkdir ~/tmp
+mdkir ~/tmp/fonts/
 
 # Utilities
 sudo apt-get install tmux
@@ -22,14 +24,24 @@ git clone https://github.com/xTristan/scripts.git
 ## Load tilix conifguration
 dconf load /com/gexperts/Tilix/ < dotfiles/tilix.dconf ## "dconf dump" to export
 
+
 ## Zsh and oh-my-zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-### Install power10k scheme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-p10k configure
 
-### follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
+### Install power10k scheme
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P tmp/fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P tmp/fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P tmp/fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P tmp/fonts/
+
+cp tmp/fonts/*.ttf /usr/local/share/fonts
+
+### Install powerlevel10k
+### https://github.com/romkatv/powerlevel10k
+cd tmp/
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
 
 ### Install Nerd Fonts
 # git clone https://github.com/ryanoasis/nerd-fonts.git ~/backups/ # too much. This takes ~5G
