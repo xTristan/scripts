@@ -9,7 +9,7 @@ sudo apt-get install tmux
 
 sudo apt-get install emacs
 sudo apt-get install google-chrome-stable
-sudo apt-get install pv gnome-tweak-tool unity-tweak-tool checkinstall build-essential git curl tilix
+sudo apt-get install pv gnome-tweak-tool unity-tweak-tool checkinstall build-essential git curl tilix gh
 
 
 # Download my own dotfiles and scripts
