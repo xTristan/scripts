@@ -3,7 +3,7 @@ sudo apt-get update && sudo apt-get install -f
 # Temporary backup folders
 mkdir ~/backup
 mkdir ~/tmp
-mdkir ~/tmp/fonts/
+mkdir ~/tmp/fonts/
 
 # Utilities
 sudo apt-get install tmux
