@@ -17,7 +17,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 # Git login
 # Generate a token here https://github.com/settings/personal-access-tokens
-gh auth login
+gh auth login # Use https auth instead of ssh
 
 # Download my own dotfiles and scripts
 git clone https://github.com/xTristan/dotfiles.git
