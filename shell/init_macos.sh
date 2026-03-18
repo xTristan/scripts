@@ -21,9 +21,12 @@ brew install gh # (GitHub CLi)
 brew install --cask unnaturalscrollwheels
 # Aerospace window management
 brew install --cask nikitabobko/tap/aerospace
+# Chrome -> workspace management
+brew install finicky
 
 brew install powerlevel10k
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+
 
 # Install p10k
 ## follow this to install font: https://github.com/romkatv/powerlevel10k#manual-font-installation
